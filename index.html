@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spark Studio — Client Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#07050a;
+    font-family:'Nunito',sans-serif;
+    color:#f0f0f0;
+    min-height:100vh;
+    padding:60px 32px;
+  }
+  .header {
+    text-align:center;
+    margin-bottom:60px;
+  }
+  .logo {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:52px;
+    letter-spacing:6px;
+    color:#ffe227;
+    text-shadow:0 0 20px rgba(255,226,39,.6),0 0 60px rgba(255,140,0,.3);
+    margin-bottom:6px;
+  }
+  .logo span { color:#fff; }
+  .tagline {
+    font-family:'DM Mono',monospace;
+    font-size:11px;letter-spacing:5px;
+    color:#555;text-transform:uppercase;
+    margin-bottom:20px;
+  }
+  .divider {
+    width:200px;height:1px;
+    background:linear-gradient(90deg,transparent,#ffe227,transparent);
+    margin:0 auto;
+  }
+  .grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:0 auto;
+  }
+  .card {
+    background:#110d14;
+    border:1px solid #2a2a3a;
+    border-top:2px solid #ffe227;
+    border-radius:4px;
+    padding:28px;
+    text-decoration:none;
+    color:inherit;
+    transition:transform .2s,border-color .2s;
+    display:block;
+  }
+  .card:hover { transform:translateY(-4px);border-color:#ffe227; }
+  .card-tag {
+    font-family:'DM Mono',monospace;font-size:9px;
+    letter-spacing:4px;color:#ffe227;text-transform:uppercase;margin-bottom:10px;
+  }
+  .card-name {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:28px;letter-spacing:2px;color:#fff;margin-bottom:4px;
+  }
+  .card-type { font-size:13px;color:#666;margin-bottom:16px; }
+  .card-status {
+    display:inline-block;padding:4px 10px;border-radius:2px;
+    font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;font-weight:700;
+  }
+  .status-demo { background:rgba(255,226,39,.12);color:#ffe227;border:1px solid rgba(255,226,39,.3); }
+  .status-live { background:rgba(101,163,13,.12);color:#86c558;border:1px solid rgba(101,163,13,.3); }
+  .add-card {
+    background:transparent;
+    border:1px dashed #2a2a3a;
+    border-radius:4px;padding:28px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;color:#333;text-align:center;
+    min-height:140px;
+  }
+  .add-icon { font-size:32px;opacity:.4; }
+  .add-text { font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:#333; }
+  footer {
+    text-align:center;margin-top:60px;
+    font-family:'DM Mono',monospace;font-size:9px;
+    letter-spacing:3px;color:#222;
+  }
+  footer span { color:#ffe227; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">⚡ SPARK <span>STUDIO</span></div>
+    <div class="tagline">Client Mockup Portfolio · Dickson, TN</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="grid">
+    <a href="./casa-hidalgo/index.html" class="card">
+      <div class="card-tag">🌮 Restaurant · Mexican</div>
+      <div class="card-name">Casa Hidalgo</div>
+      <div class="card-type">102 N Main St · Dickson, TN · (615) 570-2005</div>
+      <span class="card-status status-demo">⚡ Demo Ready</span>
+    </a>
+    <!-- Future mockups go here -->
+    <div class="add-card">
+      <div class="add-icon">+</div>
+      <div class="add-text">Next Mockup Coming Soon</div>
+    </div>
+    <div class="add-card">
+      <div class="add-icon">+</div>
+      <div class="add-text">Next Mockup Coming Soon</div>
+    </div>
+  </div>
+
+  <footer>Built by <span>⚡ Spark Studio</span> · Dickson, TN · sparkstudio.com</footer>
+</body>
+</html>
