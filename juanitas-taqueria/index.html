@@ -489,7 +489,7 @@
 <div class="qr-strip">
   <div class="qr-card">
     <div class="qr-box"><div id="qr-menu" style="width:90px;height:90px;"></div></div>
-    <div><div class="qr-label">📋 Scan to View</div><div class="qr-title">Digital Menu</div><div class="qr-desc">Scan at your table<br>to see our full menu</div></div>
+    <div><div class="qr-label">📋 Scan to View</div><div class="qr-title">Photo Menu</div><div class="qr-desc">Scan to see our full<br>menu with photos</div></div>
   </div>
   <div class="qr-sep"></div>
   <div class="qr-card">
@@ -674,7 +674,7 @@
 
 <script>
 const DD = "https://www.doordash.com/en/store/juanitas-taqueria---4801-highway-70-west-dickson-34044913/";
-const MENU_URL = window.location.href + "#menu";
+const MENU_URL = window.location.href.replace('index.html', '') + 'menu.html';
 const CALL = "tel:6292139732";
 
 new QRCode(document.getElementById("qr-menu"),    {text:MENU_URL,width:90,height:90,colorDark:"#1a237e",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
