@@ -176,6 +176,17 @@
     background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,146,42,.15) 0%, transparent 70%);
   }
 
+  /* Kilpatrick's preview */
+  .preview-kilpatricks {
+    background:linear-gradient(135deg,#0a1a0d 0%,#0f2a14 100%);
+    overflow:hidden;
+  }
+  .preview-kilpatricks::before {
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(30,122,46,.2) 0%, transparent 70%);
+  }
+
   /* coming soon */
   .preview-coming {
     background:linear-gradient(135deg,#0d0d1a,#0a0a0e);
@@ -300,7 +311,7 @@
     <div class="header-sub">Free demo sites built for local businesses — before they spend a dime.</div>
     <div class="divider"></div>
     <div class="stats">
-      <div class="stat"><div class="stat-n">3</div><div class="stat-l">Live Demos</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Live Demos</div></div>
       <div class="stat"><div class="stat-n">2 Wks</div><div class="stat-l">Avg Build Time</div></div>
       <div class="stat"><div class="stat-n">$399</div><div class="stat-l">Starting Price</div></div>
       <div class="stat"><div class="stat-n">$75/mo</div><div class="stat-l">Hosting</div></div>
@@ -308,7 +319,7 @@
   </div>
 
   <!-- ACTIVE MOCKUPS -->
-  <div class="section-label">// Active Mockups — 3 sites</div>
+  <div class="section-label">// Active Mockups — 4 sites</div>
 
   <div class="grid">
 
@@ -374,6 +385,28 @@
         <div class="card-links">
           <span class="card-link link-primary">View Demo →</span>
           <span class="card-link link-secondary">Menu Page</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- KILPATRICK'S TAVERN & GRILL -->
+    <a href="./kilpatricks/index.html" class="card">
+      <div class="card-topbar" style="background:linear-gradient(90deg,#0a1a0d,#1a7a2e,#2ea84a,#1a7a2e,#0a1a0d);"></div>
+      <div class="card-preview preview-kilpatricks">
+        <div class="live-badge"><div class="live-dot"></div> Demo Live</div>
+        <div class="preview-inner">
+          <span class="preview-emoji">🍺</span>
+          <div class="preview-name">KILPATRICK'S</div>
+          <div class="preview-type">Tavern & Grill · Hohenwald, TN</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">🍺 Tavern & Grill · Est. 2017 · Hohenwald, TN</div>
+        <div class="card-name">Kilpatrick's Tavern & Grill</div>
+        <div class="card-type">Hohenwald, TN · Good Times. Good People.<br>Full bar · Grill · Events · Waffles · Lattes</div>
+        <div class="card-links">
+          <span class="card-link link-primary">View Demo →</span>
+          <span class="card-link link-secondary">Facebook QR</span>
         </div>
       </div>
     </a>
