@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spark Digital — Client Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background:#07050a;
+    font-family:'Nunito',sans-serif;
+    color:#f0f0f0;
+    min-height:100vh;
+    padding:60px 32px;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* dot grid bg */
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image:radial-gradient(rgba(255,226,39,0.06) 1px, transparent 1px);
+    background-size:32px 32px;
+    pointer-events:none;
+  }
+
+  /* radial glow */
+  body::after {
+    content:'';
+    position:fixed; top:30%; left:50%;
+    transform:translate(-50%,-50%);
+    width:600px; height:400px; border-radius:50%;
+    background:radial-gradient(ellipse, rgba(255,140,0,0.06) 0%, transparent 70%);
+    pointer-events:none;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align:center;
+    margin-bottom:56px;
+    position:relative; z-index:2;
+  }
+
+  .logo {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:58px; letter-spacing:8px;
+    color:#ffe227;
+    text-shadow:0 0 20px rgba(255,226,39,.7), 0 0 60px rgba(255,140,0,.35);
+    margin-bottom:4px;
+    display:flex; align-items:center; justify-content:center; gap:14px;
+  }
+  .logo span { color:#fff; }
+  .logo-bolt { filter:drop-shadow(0 0 10px rgba(255,200,0,.8)); }
+
+  .tagline {
+    font-family:'DM Mono',monospace;
+    font-size:10px; letter-spacing:5px;
+    color:#444; text-transform:uppercase;
+    margin-bottom:8px;
+  }
+
+  .header-sub {
+    font-size:14px; color:#555;
+    margin-bottom:24px;
+  }
+
+  .divider {
+    width:220px; height:1px;
+    background:linear-gradient(90deg, transparent, #ffe227, transparent);
+    margin:0 auto 24px;
+  }
+
+  /* stats row */
+  .stats {
+    display:flex; align-items:center; justify-content:center;
+    gap:32px; flex-wrap:wrap; margin-bottom:0;
+  }
+  .stat {
+    text-align:center;
+    font-family:'DM Mono',monospace;
+  }
+  .stat-n { font-size:22px; font-weight:700; color:#ffe227; letter-spacing:1px; }
+  .stat-l { font-size:9px; letter-spacing:3px; color:#333; text-transform:uppercase; margin-top:2px; }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family:'DM Mono',monospace;
+    font-size:9px; letter-spacing:5px;
+    color:#2a2a3a; text-transform:uppercase;
+    margin-bottom:20px; margin-top:48px;
+    position:relative; z-index:2;
+    max-width:1000px; margin-left:auto; margin-right:auto;
+    padding-bottom:10px;
+    border-bottom:1px solid #1a1a28;
+  }
+
+  /* ── GRID ── */
+  .grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:0 auto;
+    position:relative; z-index:2;
+  }
+
+  /* ── CLIENT CARD ── */
+  .card {
+    background:#0f0c14;
+    border:1px solid #1e1e2e;
+    border-radius:6px;
+    padding:0;
+    text-decoration:none;
+    color:inherit;
+    transition:transform .25s, border-color .25s, box-shadow .25s;
+    display:block;
+    overflow:hidden;
+    position:relative;
+  }
+  .card:hover {
+    transform:translateY(-5px);
+    border-color:rgba(255,226,39,0.4);
+    box-shadow:0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(255,226,39,0.1);
+  }
+
+  /* colored top bar per card */
+  .card-topbar {
+    height:3px;
+    width:100%;
+  }
+
+  .card-preview {
+    height:140px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+  }
+
+  /* Casa Hidalgo preview */
+  .preview-casa {
+    background:linear-gradient(135deg,#0a0a1a 0%,#1a1008 100%);
+  }
+  .preview-casa::before {
+    content:'';
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(92deg,transparent,transparent 4px,rgba(255,255,255,.01) 4px,rgba(255,255,255,.01) 5px);
+  }
+
+  /* Juanita's preview */
+  .preview-juanitas {
+    background:linear-gradient(135deg,#1a237e 0%,#283593 100%);
+    overflow:hidden;
+  }
+  .preview-juanitas::before {
+    content:'';
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(180deg,
+      rgba(229,57,53,.15) 0px,rgba(229,57,53,.15) 8px,
+      rgba(249,168,37,.12) 8px,rgba(249,168,37,.12) 16px,
+      rgba(67,160,71,.1) 16px,rgba(67,160,71,.1) 24px,
+      rgba(30,136,229,.1) 24px,rgba(30,136,229,.1) 32px,
+      rgba(233,30,140,.1) 32px,rgba(233,30,140,.1) 40px
+    );
+  }
+
+  /* Tavo's preview */
+  .preview-tavos {
+    background:linear-gradient(135deg,#1a0a00 0%,#3d1c02 100%);
+    overflow:hidden;
+  }
+  .preview-tavos::before {
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,146,42,.15) 0%, transparent 70%);
+  }
+
+  /* Kilpatrick's preview */
+  .preview-kilpatricks {
+    background:linear-gradient(135deg,#0a1a0d 0%,#0f2a14 100%);
+    overflow:hidden;
+  }
+  .preview-kilpatricks::before {
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(30,122,46,.2) 0%, transparent 70%);
+  }
+
+  /* coming soon */
+  .preview-coming {
+    background:linear-gradient(135deg,#0d0d1a,#0a0a0e);
+  }
+
+  .preview-inner {
+    position:relative; z-index:2; text-align:center;
+  }
+  .preview-emoji { font-size:36px; display:block; margin-bottom:6px; }
+  .preview-name {
+    font-family:'Bebas Neue',sans-serif; font-size:18px;
+    letter-spacing:3px; color:#fff;
+  }
+  .preview-type {
+    font-family:'DM Mono',monospace; font-size:8px;
+    letter-spacing:2px; color:rgba(255,255,255,.4); margin-top:3px;
+  }
+
+  /* status badges */
+  .live-badge {
+    position:absolute; top:10px; right:10px; z-index:3;
+    background:rgba(101,163,13,.15); border:1px solid rgba(101,163,13,.4);
+    color:#86c558; font-family:'DM Mono',monospace;
+    font-size:8px; letter-spacing:2px; padding:3px 8px; border-radius:2px;
+    display:flex; align-items:center; gap:4px;
+  }
+  .live-dot {
+    width:5px; height:5px; border-radius:50%; background:#86c558;
+    animation:livePulse 1.5s ease-in-out infinite;
+  }
+  @keyframes livePulse{0%,100%{opacity:1;}50%{opacity:.2;}}
+
+  .demo-badge {
+    position:absolute; top:10px; right:10px; z-index:3;
+    background:rgba(255,226,39,.1); border:1px solid rgba(255,226,39,.25);
+    color:#ffe227; font-family:'DM Mono',monospace;
+    font-size:8px; letter-spacing:2px; padding:3px 8px; border-radius:2px;
+  }
+  .soon-badge {
+    position:absolute; top:10px; right:10px; z-index:3;
+    background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+    color:#555; font-family:'DM Mono',monospace;
+    font-size:8px; letter-spacing:2px; padding:3px 8px; border-radius:2px;
+  }
+
+  /* card body */
+  .card-body { padding:20px 22px 22px; }
+  .card-tag {
+    font-family:'DM Mono',monospace; font-size:8px;
+    letter-spacing:3px; color:#ffe227; text-transform:uppercase; margin-bottom:6px;
+  }
+  .card-name {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:26px; letter-spacing:2px; color:#fff; margin-bottom:3px;
+  }
+  .card-type { font-size:12px; color:#555; margin-bottom:14px; line-height:1.5; }
+  .card-links {
+    display:flex; gap:8px; flex-wrap:wrap;
+  }
+  .card-link {
+    font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1px;
+    padding:5px 12px; border-radius:2px; text-decoration:none;
+    transition:all .2s; display:inline-flex; align-items:center; gap:5px;
+  }
+  .link-primary {
+    background:rgba(255,226,39,.12); color:#ffe227;
+    border:1px solid rgba(255,226,39,.25);
+  }
+  .link-primary:hover { background:rgba(255,226,39,.22); border-color:rgba(255,226,39,.5); }
+  .link-secondary {
+    background:rgba(255,255,255,.04); color:#666;
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .link-secondary:hover { color:#999; border-color:rgba(255,255,255,.15); }
+
+  /* ── ADD CARD ── */
+  .add-card {
+    background:transparent;
+    border:1px dashed #1e1e2e;
+    border-radius:6px; padding:28px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:8px; text-align:center; min-height:200px;
+    transition:border-color .2s;
+  }
+  .add-card:hover { border-color:#2a2a3a; }
+  .add-icon { font-size:28px; opacity:.2; }
+  .add-text {
+    font-family:'DM Mono',monospace; font-size:9px;
+    letter-spacing:3px; color:#222; text-transform:uppercase;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align:center; margin-top:60px;
+    font-family:'DM Mono',monospace; font-size:9px;
+    letter-spacing:3px; color:#1e1e2e;
+    position:relative; z-index:2;
+  }
+  footer span { color:#ffe227; }
+  footer a { color:#333; text-decoration:none; transition:color .2s; }
+  footer a:hover { color:#ffe227; }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">
+      <svg class="logo-bolt" width="36" height="44" viewBox="0 0 56 68" fill="none">
+        <defs>
+          <linearGradient id="lg" x1="28" y1="0" x2="28" y2="68" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#fff5a0"/>
+            <stop offset="50%" stop-color="#ffe227"/>
+            <stop offset="100%" stop-color="#ff5500"/>
+          </linearGradient>
+        </defs>
+        <path d="M36 2 L12 36 L26 36 L20 66 L44 32 L30 32 Z" fill="url(#lg)"/>
+      </svg>
+      SPARK <span>DIGITAL</span>
+    </div>
+    <div class="tagline">Client Mockup Portfolio · Dickson, TN</div>
+    <div class="header-sub">Free demo sites built for local businesses — before they spend a dime.</div>
+    <div class="divider"></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Live Demos</div></div>
+      <div class="stat"><div class="stat-n">2 Wks</div><div class="stat-l">Avg Build Time</div></div>
+      <div class="stat"><div class="stat-n">$399</div><div class="stat-l">Starting Price</div></div>
+      <div class="stat"><div class="stat-n">$75/mo</div><div class="stat-l">Hosting</div></div>
+    </div>
+  </div>
+
+  <!-- ACTIVE MOCKUPS -->
+  <div class="section-label">// Active Mockups — 4 sites</div>
+
+  <div class="grid">
+
+    <!-- CASA HIDALGO -->
+    <a href="./casa-hidalgo/index.html" class="card">
+      <div class="card-topbar" style="background:linear-gradient(90deg,#c9a84c,#8b0000,#c9a84c);"></div>
+      <div class="card-preview preview-casa">
+        <div class="live-badge"><div class="live-dot"></div> Demo Live</div>
+        <div class="preview-inner">
+          <span class="preview-emoji">🌮</span>
+          <div class="preview-name">CASA HIDALGO</div>
+          <div class="preview-type">Mexican Restaurant · Dickson, TN</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">🌮 Restaurant · Mexican · Est. 2024</div>
+        <div class="card-name">Casa Hidalgo</div>
+        <div class="card-type">102 N Main St · Dickson, TN · (615) 570-2005<br>Full site · Real menu · DoorDash · QR codes</div>
+        <div class="card-links">
+          <span class="card-link link-primary">View Demo →</span>
+          <span class="card-link link-secondary">Menu Page</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- JUANITA'S TAQUERIA -->
+    <a href="./juanitas-taqueria/index.html" class="card">
+      <div class="card-topbar" style="background:linear-gradient(90deg,#e53935,#f9a825,#43a047,#1e88e5,#e91e8c,#7b1fa2);"></div>
+      <div class="card-preview preview-juanitas">
+        <div class="live-badge"><div class="live-dot"></div> Demo Live</div>
+        <div class="preview-inner">
+          <span class="preview-emoji">🌯</span>
+          <div class="preview-name">JUANITA'S</div>
+          <div class="preview-type">Tacos Y Burritos · Dickson, TN</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">🌮 Taqueria · Mexican · Since 2023</div>
+        <div class="card-name">Juanita's Taqueria</div>
+        <div class="card-type">4801 Hwy 70 W · Dickson, TN · (629) 213-9732<br>Full site · Photo menu · DoorDash · QR codes</div>
+        <div class="card-links">
+          <span class="card-link link-primary">View Demo →</span>
+          <span class="card-link link-secondary">Menu Page</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- TAVO'S MEXICAN RESTAURANT -->
+    <a href="./tavos/index.html" class="card">
+      <div class="card-topbar" style="background:linear-gradient(90deg,#8b2500,#c9922a,#8b2500);"></div>
+      <div class="card-preview preview-tavos">
+        <div class="live-badge"><div class="live-dot"></div> Demo Live</div>
+        <div class="preview-inner">
+          <span class="preview-emoji">🌮</span>
+          <div class="preview-name">TAVO'S</div>
+          <div class="preview-type">Mexican Restaurant · Linden, TN</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">🌮 Restaurant · Mexican · Linden, TN</div>
+        <div class="card-name">Tavo's Mexican Restaurant</div>
+        <div class="card-type">130 Lobelville HWY · Linden, TN · (931) 589-3001<br>Full site · 7 menu pages · Facebook QR · Call to order</div>
+        <div class="card-links">
+          <span class="card-link link-primary">View Demo →</span>
+          <span class="card-link link-secondary">Menu Page</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- KILPATRICK'S TAVERN & GRILL -->
+    <a href="./kilpatricks/index.html" class="card">
+      <div class="card-topbar" style="background:linear-gradient(90deg,#0a1a0d,#1a7a2e,#2ea84a,#1a7a2e,#0a1a0d);"></div>
+      <div class="card-preview preview-kilpatricks">
+        <div class="live-badge"><div class="live-dot"></div> Demo Live</div>
+        <div class="preview-inner">
+          <span class="preview-emoji">🍺</span>
+          <div class="preview-name">KILPATRICK'S</div>
+          <div class="preview-type">Tavern & Grill · Hohenwald, TN</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">🍺 Tavern & Grill · Est. 2017 · Hohenwald, TN</div>
+        <div class="card-name">Kilpatrick's Tavern & Grill</div>
+        <div class="card-type">Hohenwald, TN · Good Times. Good People.<br>Full bar · Grill · Events · Waffles · Lattes</div>
+        <div class="card-links">
+          <span class="card-link link-primary">View Demo →</span>
+          <span class="card-link link-secondary">Facebook QR</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- COMING SOON 1 -->
+    <div class="card" style="cursor:default;">
+      <div class="card-topbar" style="background:#1e1e2e;"></div>
+      <div class="card-preview preview-coming">
+        <div class="soon-badge">Coming Soon</div>
+        <div class="preview-inner">
+          <span class="preview-emoji" style="opacity:.3;">💈</span>
+          <div class="preview-name" style="color:#333;">LOCAL SALON</div>
+          <div class="preview-type">Hair & Beauty · Dickson, TN</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag" style="color:#333;">· · · In Progress</div>
+        <div class="card-name" style="color:#333;">Next Client</div>
+        <div class="card-type">Booking integration · Service menu · Photo gallery</div>
+      </div>
+    </div>
+
+    <!-- COMING SOON 2 -->
+    <div class="add-card">
+      <div class="add-icon">⚡</div>
+      <div class="add-text">Your Business Here</div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:#1a1a28;margin-top:4px;">Free mock-up · No commitment</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="margin-bottom:8px;">
+      Built by <span>⚡ Spark Digital</span> · Dickson, TN
+    </div>
+    <div>
+      <a href="tel:4048070806">(404) 807-0806</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:markhamtrenton@gmail.com">markhamtrenton@gmail.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>

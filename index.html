@@ -187,6 +187,26 @@
     background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(30,122,46,.2) 0%, transparent 70%);
   }
 
+  /* Lewis & Clark's preview */
+  .preview-lewisclark {
+    background:linear-gradient(135deg,#1a0a00 0%,#2c1810 100%);
+  }
+  .preview-lewisclark::before {
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,146,42,.15) 0%, transparent 70%);
+  }
+
+  /* Papaw's preview */
+  .preview-papaws {
+    background:linear-gradient(135deg,#0a0500 0%,#2a1505 100%);
+  }
+  .preview-papaws::before {
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse 60% 60% at 50% 60%, rgba(212,82,26,.2) 0%, transparent 70%);
+  }
+
   /* coming soon */
   .preview-coming {
     background:linear-gradient(135deg,#0d0d1a,#0a0a0e);
@@ -311,7 +331,7 @@
     <div class="header-sub">Free demo sites built for local businesses — before they spend a dime.</div>
     <div class="divider"></div>
     <div class="stats">
-      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Live Demos</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">Live Demos</div></div>
       <div class="stat"><div class="stat-n">2 Wks</div><div class="stat-l">Avg Build Time</div></div>
       <div class="stat"><div class="stat-n">$399</div><div class="stat-l">Starting Price</div></div>
       <div class="stat"><div class="stat-n">$75/mo</div><div class="stat-l">Hosting</div></div>
@@ -319,7 +339,7 @@
   </div>
 
   <!-- ACTIVE MOCKUPS -->
-  <div class="section-label">// Active Mockups — 4 sites</div>
+  <div class="section-label">// Active Mockups — 6 sites</div>
 
   <div class="grid">
 
@@ -411,25 +431,51 @@
       </div>
     </a>
 
-    <!-- COMING SOON 1 -->
-    <div class="card" style="cursor:default;">
-      <div class="card-topbar" style="background:#1e1e2e;"></div>
-      <div class="card-preview preview-coming">
-        <div class="soon-badge">Coming Soon</div>
+    <!-- LEWIS & CLARK'S -->
+    <a href="./lewis-clarks/index.html" class="card">
+      <div class="card-topbar" style="background:linear-gradient(90deg,#8b1a1a,#c9922a,#8b1a1a);"></div>
+      <div class="card-preview preview-lewisclark">
+        <div class="live-badge"><div class="live-dot"></div> Demo Live</div>
         <div class="preview-inner">
-          <span class="preview-emoji" style="opacity:.3;">💈</span>
-          <div class="preview-name" style="color:#333;">LOCAL SALON</div>
-          <div class="preview-type">Hair & Beauty · Dickson, TN</div>
+          <span class="preview-emoji">🧭</span>
+          <div class="preview-name">LEWIS & CLARK'S</div>
+          <div class="preview-type">Restaurant · Hohenwald, TN</div>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-tag" style="color:#333;">· · · In Progress</div>
-        <div class="card-name" style="color:#333;">Next Client</div>
-        <div class="card-type">Booking integration · Service menu · Photo gallery</div>
+        <div class="card-tag">🥙 Restaurant · Greek & American · Hohenwald, TN</div>
+        <div class="card-name">Lewis & Clark's</div>
+        <div class="card-type">Hohenwald, TN · Greek menu · Steaks · Pasta · Seafood<br>Custom logo · 3 menu pages · Catering · Family Pack</div>
+        <div class="card-links">
+          <span class="card-link link-primary">View Demo →</span>
+          <span class="card-link link-secondary">Menu Page</span>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <!-- COMING SOON 2 -->
+    <!-- PAPAW'S ROLLING SMOKEHOUSE -->
+    <a href="./papaws/index.html" class="card">
+      <div class="card-topbar" style="background:linear-gradient(90deg,#0a0500,#d4521a,#ff6a00,#d4521a,#0a0500);"></div>
+      <div class="card-preview preview-papaws">
+        <div class="live-badge"><div class="live-dot"></div> Demo Live</div>
+        <div class="preview-inner">
+          <span class="preview-emoji">🚂</span>
+          <div class="preview-name">PAPAW'S</div>
+          <div class="preview-type">Rolling Smokehouse · Hohenwald, TN</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">🔥 BBQ · Food Truck · Hohenwald, TN</div>
+        <div class="card-name">Papaw's Rolling Smokehouse</div>
+        <div class="card-type">Hohenwald, TN · On Wheels · Slow Smoked BBQ<br>Fire hero · Food photos · Facebook QR · Menu page</div>
+        <div class="card-links">
+          <span class="card-link link-primary">View Demo →</span>
+          <span class="card-link link-secondary">Menu Page</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- YOUR BUSINESS HERE -->
     <div class="add-card">
       <div class="add-icon">⚡</div>
       <div class="add-text">Your Business Here</div>
